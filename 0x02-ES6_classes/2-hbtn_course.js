@@ -1,40 +1,63 @@
-/* eslint-disable no-underscore-dangle */
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    if (typeof name === 'string') this._name = name;
-    else throw new TypeError('Name must be a string');
+    if (typeof (name) === 'string') {
+      // eslint-disable-next-line no-underscore-dangle
+      this._name = name;
+    } else {
+      throw new TypeError('Name must be a string');
+    }
 
-    if (typeof length === 'number') this._length = length;
-    else throw new TypeError('Length must be a number');
+    if (typeof (length) === 'number') {
+      // eslint-disable-next-line no-underscore-dangle
+      this._length = length;
+    } else {
+      throw new TypeError('Length must be a number');
+    }
 
-    if (Array.isArray(students)) this._students = students;
-    else throw new TypeError('Students must be an array');
+    if (students instanceof Array) {
+      // eslint-disable-next-line no-underscore-dangle
+      this._students = students;
+    } else {
+      throw new TypeError('Students must be an array');
+    }
   }
 
+  // getter for name
   get name() {
+    // eslint-disable-next-line no-underscore-dangle
     return this._name;
   }
 
-  set name(newName) {
-    if (typeof newName === 'string') this._name = newName;
+  // setter for name
+  set name(value) {
+    // eslint-disable-next-line no-underscore-dangle
+    if (typeof (value) === 'string') this._name = value;
     else throw new TypeError('Name must be a string');
   }
 
+  // getter for length
   get length() {
-    return this.length;
+    // eslint-disable-next-line no-underscore-dangle
+    return this._length;
   }
 
-  set length(newLength) {
-    if (typeof newLength === 'number') this._length = newLength;
+  // setter for length
+  set length(value) {
+    // eslint-disable-next-line no-underscore-dangle
+    if (typeof (value) === 'number') this._length = value;
     else throw new TypeError('Length must be a number');
   }
 
+  // getter for students
   get students() {
+    // eslint-disable-next-line no-underscore-dangle
     return this._students;
   }
 
-  set students(newStudents) {
-    if (Array.isArray(newStudents)) this._students = newStudents;
+  // setter for students
+  set students(value) {
+    // eslint-disable-next-line no-underscore-dangle
+    if (value instanceof Array) this._students = value;
     else throw new TypeError('Students must be an array');
   }
 }
