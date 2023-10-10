@@ -1,4 +1,4 @@
-# ES6 Basics Project
+# ALX JavaScript Project - ES6 Basics Project
 
 This project is part of the ALX Backend JavaScript Curriculum and covers fundamental concepts of ECMAScript 6 (ES6) in JavaScript. It includes a series of tasks to practice and understand ES6 features. Below, you'll find a brief overview of the project and instructions for running the tasks.
 

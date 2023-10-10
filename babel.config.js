@@ -1,12 +1,11 @@
-module.exports = {
-  presets: [
-    [
-      '@babel/preset-env',
-      {
-        targets: {
-          node: 'current',
-        },
+// eslint-disable-next-line import/prefer-default-export
+export const presets = [
+  [
+    '@babel/preset-env',
+    {
+      targets: {
+        node: 'current',
       },
-    ],
+    },
   ],
-};
+];
