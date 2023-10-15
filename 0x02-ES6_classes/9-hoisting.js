@@ -1,51 +1,36 @@
+/* eslint-disable no-underscore-dangle */
 // eslint-disable-next-line max-classes-per-file
 export class HolbertonClass {
   constructor(year, location) {
-    // eslint-disable-next-line no-underscore-dangle
     this._year = year;
-
-    // eslint-disable-next-line no-underscore-dangle
     this._location = location;
   }
 
   get year() {
-    // eslint-disable-next-line no-underscore-dangle
     return this._year;
   }
 
   get location() {
-    // eslint-disable-next-line no-underscore-dangle
     return this._location;
   }
 }
 
 export class StudentHolberton {
-  constructor(firstName, lastName, holbertonClass) {
-    // eslint-disable-next-line no-underscore-dangle
-    if (typeof firstName === 'string') this._firstName = firstName;
-    else throw new TypeError('Firstname must be a string');
-
-    // eslint-disable-next-line no-underscore-dangle
-    if (typeof lastName === 'string') this._lastName = lastName;
-    else throw new TypeError('Lastname must be a string');
-
-    // eslint-disable-next-line no-underscore-dangle
-    if (holbertonClass instanceof HolbertonClass) this._holbertonClass = holbertonClass;
-    else throw new TypeError('HolbertonClass must of type HolbertonClass');
+  constructor(firstName, lastName, holbertonClass) { 
+     this._firstName = firstName;
+     this._lastName = lastName;
+     this._holbertonClass = holbertonClass;
   }
 
-  get fullName() {
-    // eslint-disable-next-line no-underscore-dangle
+  get fullName() { 
     return `${this._firstName} ${this._lastName}`;
   }
 
   get holbertonClass() {
-    // eslint-disable-next-line no-underscore-dangle
     return this._holbertonClass;
   }
 
   get fullStudentDescription() {
-    // eslint-disable-next-line no-underscore-dangle
     return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
   }
 }
