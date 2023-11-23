@@ -26,11 +26,12 @@ function countStudents(path) {
         });
 
         // Log the results to the console
-        console.log(`Number of students: ${lines.length}`);
-        console.log(`Number of students in CS: ${csCount}. List: ${csList.join(', ')}`);
-        console.log(`Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`);
-
-        resolve();
+	let output = '';
+	output += `Number of students: ${lines.length}\n`;
+       	output += `Number of students in CS: ${csCount}. List: ${csList.join(', ')}\n`;
+       	output += `Number of students in SWE: ${sweCount}. List: ${sweList.join(', ')}`;
+	console.log(output);
+	resolve(output);
       }
     });
   });
