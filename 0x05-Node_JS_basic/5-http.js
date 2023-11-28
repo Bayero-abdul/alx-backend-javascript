@@ -9,7 +9,7 @@ const app = http.createServer((req, res) => {
 
 app.on('request', (req, res) => {
   if (req.url === '/') {
-    res.end('Hello holberton School!');
+    res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     res.write('This is the list of our students\n');
     countStudents(filePath)
