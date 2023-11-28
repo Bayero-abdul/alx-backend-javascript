@@ -26,13 +26,15 @@ function countStudents(path) {
         });
 
         const totalStudents = Object.values(students).reduce((sum, field) => sum + field.count, 0);
-        console.log(`Number of students: ${totalStudents}`);
 
-        Object.keys(students).forEach((field) => {
-          console.log(`Number of students in ${field}: ${students[field].count}. List: ${students[field].list.join(', ')}`);
-        });
+        let output = '';
+        output += `Number of students: ${totalStudents}\n`;
+        const outputLines = Object.keys(students).map((field) => `Number of students in ${field}: ${students[field].count}. List: ${students[field].list.join(', ')}`);
 
-        resolve();
+        output += outputLines.join('\n');
+
+        console.log(output);
+        resolve(output);
       })
       .catch(() => {
         reject(new Error('Cannot load the database'));
