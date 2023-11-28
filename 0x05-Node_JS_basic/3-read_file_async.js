@@ -25,14 +25,16 @@ function countStudents(path) {
           }
         });
 
-        const totalStudents = Object.values(students).reduce((sum, field) => sum + field.count, 0);
-
         let output = '';
+
+        const totalStudents = Object.values(students).reduce((sum, field) => sum + field.count, 0);
         output += `Number of students: ${totalStudents}\n`;
-        const outputLines = Object.keys(students).map((field) => `Number of students in ${field}: ${students[field].count}. List: ${students[field].list.join(', ')}`);
 
-        output += outputLines.join('\n');
+        Object.keys(students).forEach((field) => {
+          output += `Number of students in ${field}: ${students[field].count}. List: ${students[field].list.join(', ')}\n`;
+        });
 
+        output = output.slice(0, output.length - 1);
         console.log(output);
         resolve(output);
       })
