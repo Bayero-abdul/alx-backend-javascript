@@ -1,10 +1,8 @@
 import readDatabase from '../utils';
 
-const filePath = process.argv[2].toString();
-
 class StudentsController {
   static getAllStudents(req, res) {
-    readDatabase(filePath)
+    readDatabase(process.argv[2].toString())
       .then((studentsByField) => {
         let output = 'This is the list of our students\n';
 
@@ -28,16 +26,16 @@ class StudentsController {
 
     if (major !== 'CS' && major !== 'SWE') {
       res.status(500).send('Major parameter must be CS or SWE');
-      res.end();
+      return;
     }
 
-    readDatabase(filePath)
+    readDatabase(process.argv[2].toString())
       .then((studentsByField) => {
+        let output = '';
         if (major && major in studentsByField) {
-          let output = '';
-          output += `List: ${studentsByField[major].join(', ')}`;
-          res.status(200).send(output);
+          output = `List: ${studentsByField[major].join(', ')}`;
         }
+        res.status(200).send(output);
       })
       .catch((err) => {
         console.log(err.message);
